@@ -20,6 +20,16 @@ layoutsIncludeInToc:
   - section
 ---
 
-# FHSH AiSP 模板
+# [Python]{.font-mono style="display: inline;"} 基礎課程
 
-## 快速建立
+## 資料的 [I/O]{.font-mono style="display: inline;"}
+
+---
+
+# OUTLINE {.font-mono}
+
+<CustomToc />
+
+---
+src: pages/first-line.md
+---
