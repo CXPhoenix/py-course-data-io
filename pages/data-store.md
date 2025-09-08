@@ -48,12 +48,12 @@ layout: section
 
 所以我們要輸出變數，就可以直接用 `print()`{.font-mono} 來處理。
 
-電腦處理的樣貌大概長成以下：
+電腦處理的過程大概如以下：
 
 ::div{.kg .font-mono .mt-4 .px-8}
 
 ````md magic-move {lines:true}
-```py
+```py{*|1|2}
 variable = 10
 print(variable)
 ```
@@ -61,6 +61,19 @@ print(variable)
 print(10)
 ```
 ````
+::
+
+::p {.w-full .absolute .bottom-22 .text-center v-click="['1', '+1']"}
+建立變數 `variable`{.font-mono}，並把數字資料 `10`{.font-mono} 存到變數中
+::
+
+::p {.w-full .absolute .bottom-22 .text-center v-click="['2', '+1']"}
+將變數 `variable`{.font-mono} 放到 `print`{.font-mono} 中輸出
+::
+
+::p {.w-full .absolute .bottom-14 .text-center v-click="3"}
+電腦執行時，會把 `variable`{.font-mono} 中存放的資料取出， \
+交給 `print`{.font-mono} 輸出
 ::
 
 <style scoped>
@@ -100,9 +113,86 @@ print(10)
 ::
 
 ---
+
+# 宣告變數名稱時的注意事項
+
+設定變數時，需要特別注意以下事項：{.pt-2}
+
+::::div{.pl-14}
+:::v-clicks
+1. 第一個字**不能**{.text-rose-600 .text-3xl}用數字（半形）命名。
+    ::p {.text-2xl}
+    這跟語法解析器（[Parser]{.font-mono}）解析程式語法有關，容易造成錯誤。
+    ::
+2. **不能**{.text-rose-600 .text-4xl}使用「保留字 [Reserved Word]{.font-mono}」命名變數。
+    ::p {.text-2xl}
+    在 [Python]{.font-mono} 中會造成你無法使用那個關鍵字；其他程式語言則可能會在編譯時發生錯誤。
+    ::
+3. 不介意中文，但**不建議**{.text-rose-600 .text-5xl}中文。 
+    ::p {.text-2xl}
+    編解碼（[Encoding/Decoding]{.font-mono}）原始碼時可能產生問題。
+    ::
+:::
+::::
+
+---
+
+# 宣告變數名稱時的習慣
+
+撰寫 [Python]{.font-mono} 時，變數宣告有幾個比較習慣使用的命名風格：
+
+::::div{.pl-14}
+:::v-clicks
+1. 小寫蛇式命名 [Lower Snake Case]{.font-mono}
+    ::p{.text-2xl}
+    e.g. `user_info`{.font-mono}、`one_time_password`{.font-mono}
+    ::
+2. 大寫駝峰式命名 [Upper Camel Case]{.font-mono}
+    ::p{.text-2xl}
+    e.g. `UserInfo`{.font-mono}、`OneTimePassword`{.font-mono}
+    ::
+3. 大寫蛇式命名 [Upper Snake Case]{.font-mono}
+    ::p{.text-2xl}
+    e.g. `USER_INFO`{.font-mono}、`ONE_TIME_PASSWORD`{.font-mono}
+    ::
+:::
+::::
+
+---
+
+# 宣告變數名稱時的習慣（續）
+
+以下命名方式在平常非常不建議：
+
+::v-clicks
+* 隨便命名：真的會忘記這個變數的用途。
+* 與儲存的資料無關：然後你就忘記這個變數的用途。
+* 命名時採用「駭客式命名 [L337 sp34k]{.font-mono}」： \
+    `I d0n'7 b3l13v3 y0u c0u1d und3r574nd 7h15 l1n3!`{.font-mono}
+::
+
+---
+
+# 宣告變數名稱時的習慣（續）
+
+::center-flex-block {.gap-6 .pb-16}
+:::div{.text-3xl}
+但我在寫 [APCS]{.font-mono} 不想寫這麼多字，想省時間怎麼辦？
+:::
+
+:::div{.text-3xl v-click}
+那就用 [Ninja Code]{.font-mono} 吧！
+:::
+::
+
+::p{.absolute .bottom-12 .right-6 .-rotate-12 v-click}
+`a=1`{.font-mono}、`N=input()`{.font-mono} 之類的
+::
+
+---
 python:
     stdin: 
-        - Hello 復興 AI 資安學程
+        - 恭喜你學會最基本的 I/O 讀寫
 ---
 
 # 實作時間
@@ -111,12 +201,12 @@ python:
 你能否把輸入的資料放到變數後，在 `print()`{.font-mono} 出來？
 ::
 
-::p {.text-sm .pl-8}
-我把輸入的資料隱藏起來，所以試著輸出看看會出來什麼吧 [ლ(・´ｪ`・ლ)]{.font-mono}
+::p {.text-lg .pl-8}
+我把輸入的資料隱藏起來，所以試著讀取輸入、輸出看看會出來什麼吧 [ლ(・´ｪ`・ლ)]{.font-mono}
 ::
 
 ::div{.font-mono .pt-2 .px-6}
-```py {monaco-run} { lineNumbers: 'on', height: '14rem', autorun: false, editorOptions: { fontSize: 14 } }
+```py {monaco-run} { lineNumbers: 'on', height: '14rem', autorun: false, editorOptions: { fontSize: 16 } }
 input()
 ```
 ::

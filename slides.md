@@ -54,21 +54,28 @@ layout: section
 
 # 今日學習的
 
+::v-clicks{depth=2}
 * 輸入輸出 [I/O]{.font-mono}
 * `print()`{.font-mono} 的使用
 * `input()`{.font-mono} 的使用
 * 變數的概念與術語
+  * 宣告 [declare]{.font-mono}
+  * 賦值 [assigned]{.font-mono}
+  * 呼叫 [call]{.font-mono}
+::
 
 ---
 
 # 在「資料儲存」章節還有...
 
+::v-clicks
 * 資料的型態
 * 數字資料的加減乘除處理
 * 文字資料的處理
 * 文字資料的格式化
 * 輸出到其他地方儲存資料（這個後面才會教）
 * etc..
+::
 
 ---
 layout: section
